@@ -1,0 +1,256 @@
+@font-face {
+    font-family: Xahn Mono;
+    src: url("assets/fonts/XanhMono-Regular.ttf");
+}
+
+:root {
+    --container-label-height: calc(var(--font-size)*2);
+    --layout-border: var(--border-size) dotted black;
+    --layout-padding: 8px;
+    --column-gap: 8px;
+    --border-size: 1px;
+    --font-size: 12px;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: Xahn Mono;
+    font-size: var(--font-size);
+    /* border: 2px dashed blue; */
+}
+
+.body-list-item {
+    display: list-item;
+    list-style-type: circle;
+    text-align: center;
+    line-height: 8px;
+}
+
+.website-container {
+    width: 100%;
+    height: 100vh;
+    /* border: 5px dashed blue; */
+}
+
+
+.website-layout-container {
+    width: 100%;
+    height: 100%;
+    /* border: 5px dashed green; */
+    display: flex;
+}
+
+.navigation-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    border-right: var(--layout-border);
+    padding: var(--layout-padding);
+    /* gap: 24px; */
+    /* border: 5px dashed purple; */
+}
+
+.body-container {
+    width: 75%;
+    padding: var(--layout-padding);
+    display: flex;
+    flex-direction: column;
+    /* gap: var(--column-gap); */
+    /* border: 5px dashed purple; */
+    position: sticky;
+    top: 0px;
+    overflow: hidden;
+}
+
+.body-column-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--column-gap);
+    position: sticky;
+    /* top: var(--container-label-height); */
+
+}
+
+.body-column {
+    overflow: auto;
+    /* border: 3px dashed black; */
+    height: calc(100vh - var(--container-label-height) - var(--border-size));
+    padding-bottom: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    /* position: sticky;
+    top: 0px; */
+}
+.text-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.image-grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: masonry;
+    gap: 8px;
+}
+
+.project-preview-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+    /* border: 3px solid black; */
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.editors-container {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+/* ******* Elements ******** */
+
+.container-label {
+    line-height: var(--container-label-height);
+    position: sticky;
+    top: 0px;
+    /* height: var(--container-label-height); */
+    border-bottom: var(--layout-border);
+    /* border: 3px dashed blue; */
+    background-color: white;
+    text-decoration: none;
+    color: black;
+}
+
+.button-wrapper {
+    border: 1px solid black;
+    text-align: center;
+    text-decoration: none;
+    color: black;
+    padding: 4px;
+}
+
+.image-wrapper  {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+}
+
+.link-wrapper {
+    border-bottom: 1px dotted black;
+    line-height: var(--container-label-height);
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    background-color: white;
+}
+
+.link-wrapper:hover {
+    color: white;
+    background-color: black;
+}
+
+.editors-list-wrapper {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;;
+}
+
+.editors-list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+}
+
+.editor-item {
+    display: list-item;
+    list-style-type: circle;
+    text-align: left;
+    line-height: 8px;
+}
+
+
+.display-body-text {
+    font-size: 20px;
+}
+
+.SM-Display {
+    width: 100%;
+
+}
+
+.image-grid-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    border: var(--border-size) dotted black;
+    margin-bottom: 16px;
+
+}
+
+#other-projects-label {
+    margin-top: 40px;
+}
+
+/* ******* Breakpoints ******** */
+
+@media (max-width: 1200px) {
+
+    .body-column-container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        overflow: auto;
+        position: relative;
+    }
+
+    .body-column {
+        overflow: unset;
+        height: auto;
+        padding-bottom: 40px;
+    }
+
+    #home-body-column {
+        overflow: auto;
+        padding-bottom: 400px;
+    }
+
+    /* .website-container {
+        height: auto;
+        overflow: hidden;
+    }
+
+    .body-container {
+        overflow: hidden;
+        border: 3px dashed blue;
+    }
+
+    .body-column-container {
+        overflow: auto;
+        display: block;
+        position: sticky;
+    top: var(--container-label-height);
+    height: calc(100vh - var(--container-label-height));
+    }
+    
+    .body-column {
+        overflow: unset;
+        height: auto;
+    } */
+}
