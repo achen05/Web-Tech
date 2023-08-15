@@ -5,7 +5,7 @@
 
 :root {
     --container-label-height: calc(var(--font-size)*2);
-    --layout-border: var(--border-size) dotted black;
+    --layout-border: var(--border-size) solid black;
     --layout-padding: 8px;
     --column-gap: 8px;
     --border-size: 1px;
@@ -148,6 +148,7 @@
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
+    background-color: black;
 }
 
 .link-wrapper {
