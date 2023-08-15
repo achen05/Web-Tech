@@ -75,6 +75,8 @@
 
 .body-column {
     overflow: auto;
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
     /* border: 3px dashed black; */
     height: calc(100vh - var(--container-label-height) - var(--border-size));
     padding-bottom: 300px;
@@ -84,6 +86,11 @@
     /* position: sticky;
     top: 0px; */
 }
+
+.body-column::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
 .text-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
